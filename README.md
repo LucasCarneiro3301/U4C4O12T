@@ -52,12 +52,10 @@ make
 
 ### 1. Botões
 
-<div align="center">
 | BOTÃO                            | DESCRIÇÃO                                     | 
 |:----------------------------------:|:---------------------------------------------:|
 | A                                  | Incrementa em uma unidade                   | 
 | B                                  | Decrementa em uma unidade               | 
-</div>
 
 ### 2. LED RGB Vermelho
 
