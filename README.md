@@ -18,7 +18,7 @@ __Para este trabalho, os seguintes componentes e ferramentas se fazem necessári
 __O código com a lógica adotada pelo grupo se encontra no presente reposítório e o resultado pode ser assistido no vídeo alocado neste link: [Aplicação U4C4O12T - Contador na Matriz de LED](https://www.youtube.com).__
 
 <div align="center">
-  <img src="[https://github.com/user-attachments/assets/0ae5fa23-4bc6-43d1-8f01-7f12f507d591](https://github.com/user-attachments/assets/45ee39ff-bf4a-4fbb-897b-3f30eb7b1b9b)" alt="GIF demonstrativo" width="300"/>
+  <img src="https://github.com/user-attachments/assets/45ee39ff-bf4a-4fbb-897b-3f30eb7b1b9b" alt="GIF demonstrativo" width="300"/>
 </div>
 
 ## Instruções de Uso
