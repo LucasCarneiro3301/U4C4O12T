@@ -28,6 +28,7 @@ PIO pio = pio0;
 
 int sm = 0;
 
+//Frames fixos
 Led_Matrix blank = {
     {{0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}}, // Linha 0
     {{0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}}, // Linha 1
@@ -35,7 +36,6 @@ Led_Matrix blank = {
     {{0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}}, // Linha 3
     {{0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}}  // Linha 4
 };
-
 Led_Matrix lower_row = {
     {{0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}}, // Linha 0
     {{0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}}, // Linha 1
@@ -43,7 +43,6 @@ Led_Matrix lower_row = {
     {{0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}}, // Linha 3
     {{0.1, 0.0, 0.0}, {0.1, 0.0, 0.0}, {0.1, 0.0, 0.0}, {0.1, 0.0, 0.0}, {0.1, 0.0, 0.0}}  // Linha 4
 };
-
 Led_Matrix upper_row = {
     {{0.1, 0.0, 0.0}, {0.1, 0.0, 0.0}, {0.1, 0.0, 0.0}, {0.1, 0.0, 0.0}, {0.1, 0.0, 0.0}}, // Linha 0
     {{0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}}, // Linha 1
@@ -51,7 +50,6 @@ Led_Matrix upper_row = {
     {{0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}}, // Linha 3
     {{0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}}  // Linha 4
 };
-
 Led_Matrix upper_lower_row = {
     {{0.1, 0.0, 0.0}, {0.1, 0.0, 0.0}, {0.1, 0.0, 0.0}, {0.1, 0.0, 0.0}, {0.1, 0.0, 0.0}}, // Linha 0
     {{0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}}, // Linha 1
@@ -59,7 +57,6 @@ Led_Matrix upper_lower_row = {
     {{0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}}, // Linha 3
     {{0.1, 0.0, 0.0}, {0.1, 0.0, 0.0}, {0.1, 0.0, 0.0}, {0.1, 0.0, 0.0}, {0.1, 0.0, 0.0}}  // Linha 4
 };
-
 Led_Matrix upper_mid_lower_row = {
     {{0.1, 0.0, 0.0}, {0.1, 0.0, 0.0}, {0.1, 0.0, 0.0}, {0.1, 0.0, 0.0}, {0.1, 0.0, 0.0}}, // Linha 0
     {{0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}}, // Linha 1
@@ -67,7 +64,6 @@ Led_Matrix upper_mid_lower_row = {
     {{0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}}, // Linha 3
     {{0.1, 0.0, 0.0}, {0.1, 0.0, 0.0}, {0.1, 0.0, 0.0}, {0.1, 0.0, 0.0}, {0.1, 0.0, 0.0}}  // Linha 4
 };
-
 Led_Matrix mid_row = {
     {{0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}}, // Linha 0
     {{0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}}, // Linha 1
@@ -76,12 +72,12 @@ Led_Matrix mid_row = {
     {{0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}},  // Linha 4
 };
 
-//função para definição da intensidade de cores do led
+//Definição da cor escolhida
 uint32_t color(double b, double r, double g) {
   return (((unsigned char)(g * 255)) << 24) | (((unsigned char)(r * 255)) << 16) | (((unsigned char)(b * 255)) << 8);
 }
 
-
+//Imprimindo o frame do número na matriz de led
 void number_printing(Led_Matrix* frame){
     for (int i = 4; i >= 0; i--){
         if(i % 2) {
@@ -94,15 +90,12 @@ void number_printing(Led_Matrix* frame){
     }
 }
 
-void color_setting(Led_Matrix* frame,float r, float g, float b, int row, int col) {
+//Forma o frame do número
+void number_framer(Led_Matrix* frame,Led_Matrix* base,float r, float g, float b, int row, int col, bool clear, bool print, float itnsty) {
+    if(clear) memcpy(*frame, *base, sizeof(Led_Matrix));
     (*frame)[row][col].red = r;
     (*frame)[row][col].blue = b;
     (*frame)[row][col].green = g;
-}
-
-void number_framer(Led_Matrix* frame,Led_Matrix* base,float r, float g, float b, int row, int col, bool clear, bool print, float itnsty) {
-    if(clear) memcpy(*frame, *base, sizeof(Led_Matrix));
-    color_setting(frame,r*itnsty,g*itnsty,b*itnsty,row,col);
     if(print) number_printing(frame); 
 }
 
