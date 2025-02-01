@@ -91,7 +91,7 @@ void number_printing(Led_Matrix* frame){
 }
 
 //Forma o frame do número
-void number_framer(Led_Matrix* frame,Led_Matrix* base,float r, float g, float b, int row, int col, bool clear, bool print, float itnsty) {
+void number_framer(Led_Matrix* frame,Led_Matrix* base,float r, float g, float b, int row, int col, bool clear, bool print) {
     if(clear) memcpy(*frame, *base, sizeof(Led_Matrix));
     (*frame)[row][col].red = r;
     (*frame)[row][col].blue = b;
@@ -103,52 +103,52 @@ void numbers(int number) {
     Led_Matrix frame;
 
     if(number == 1) {
-        number_framer(&frame,&lower_row,0.1,0,0,1,1,true,false,1.0);
-        number_framer(&frame,&blank,0.1,0,0,0,2,false,false,1.0);
-        number_framer(&frame,&blank,0.1,0,0,1,2,false,false,1.0);
-        number_framer(&frame,&blank,0.1,0,0,2,2,false,false,1.0);
-        number_framer(&frame,&blank,0.1,0,0,3,2,false,true,1.0);
+        number_framer(&frame,&lower_row,0.1,0,0,1,1,true,false);
+        number_framer(&frame,&blank,0.1,0,0,0,2,false,false);
+        number_framer(&frame,&blank,0.1,0,0,1,2,false,false);
+        number_framer(&frame,&blank,0.1,0,0,2,2,false,false);
+        number_framer(&frame,&blank,0.1,0,0,3,2,false,true);
     } else if(number == 2) {
-        number_framer(&frame,&upper_mid_lower_row,0.1,0,0,1,4,true,false,1.0);
-        number_framer(&frame,&blank,0.1,0,0,3,0,false,true,1.0);
+        number_framer(&frame,&upper_mid_lower_row,0.1,0,0,1,4,true,false);
+        number_framer(&frame,&blank,0.1,0,0,3,0,false,true);
     } else if(number == 3) {
-        number_framer(&frame,&upper_mid_lower_row,0.1,0,0,1,4,true,false,1.0);
-        number_framer(&frame,&blank,0.1,0,0,3,4,false,true,1.0);
+        number_framer(&frame,&upper_mid_lower_row,0.1,0,0,1,4,true,false);
+        number_framer(&frame,&blank,0.1,0,0,3,4,false,true);
     } else if(number == 4) {
-        number_framer(&frame,&mid_row,0.1,0,0,0,0,true,false,1.0);
-        number_framer(&frame,&blank,0.1,0,0,0,4,false,false,1.0);
-        number_framer(&frame,&blank,0.1,0,0,1,0,false,false,1.0);
-        number_framer(&frame,&blank,0.1,0,0,1,4,false,false,1.0);
-        number_framer(&frame,&blank,0.1,0,0,3,4,false,false,1.0);
-        number_framer(&frame,&blank,0.1,0,0,4,4,false,true,1.0);
+        number_framer(&frame,&mid_row,0.1,0,0,0,0,true,false);
+        number_framer(&frame,&blank,0.1,0,0,0,4,false,false);
+        number_framer(&frame,&blank,0.1,0,0,1,0,false,false);
+        number_framer(&frame,&blank,0.1,0,0,1,4,false,false);
+        number_framer(&frame,&blank,0.1,0,0,3,4,false,false);
+        number_framer(&frame,&blank,0.1,0,0,4,4,false,true);
     } else if(number == 5) {
-        number_framer(&frame,&upper_mid_lower_row,0.1,0,0,1,0,true,false,1.0);
-        number_framer(&frame,&blank,0.1,0,0,3,4,false,true,1.0);
+        number_framer(&frame,&upper_mid_lower_row,0.1,0,0,1,0,true,false);
+        number_framer(&frame,&blank,0.1,0,0,3,4,false,true);
     } else if(number == 6) {
-        number_framer(&frame,&upper_mid_lower_row,0.1,0,0,1,0,true,false,1.0);
-        number_framer(&frame,&blank,0.1,0,0,3,0,false,false,1.0);
-        number_framer(&frame,&blank,0.1,0,0,3,4,false,true,1.0);
+        number_framer(&frame,&upper_mid_lower_row,0.1,0,0,1,0,true,false);
+        number_framer(&frame,&blank,0.1,0,0,3,0,false,false);
+        number_framer(&frame,&blank,0.1,0,0,3,4,false,true);
     } else if(number == 7) {
-        number_framer(&frame,&upper_row,0.1,0,0,1,4,true,false,1.0);
-        number_framer(&frame,&blank,0.1,0,0,2,3,false,false,1.0);
-        number_framer(&frame,&blank,0.1,0,0,3,3,false,false,1.0);
-        number_framer(&frame,&blank,0.1,0,0,4,3,false,true,1.0);
+        number_framer(&frame,&upper_row,0.1,0,0,1,4,true,false);
+        number_framer(&frame,&blank,0.1,0,0,2,3,false,false);
+        number_framer(&frame,&blank,0.1,0,0,3,3,false,false);
+        number_framer(&frame,&blank,0.1,0,0,4,3,false,true);
     } else if(number == 8) {
-        number_framer(&frame,&upper_mid_lower_row,0.1,0,0,1,0,true,false,1.0);
-        number_framer(&frame,&blank,0.1,0,0,1,4,false,false,1.0);
-        number_framer(&frame,&blank,0.1,0,0,3,0,false,false,1.0);
-        number_framer(&frame,&blank,0.1,0,0,3,4,false,true,1.0);
+        number_framer(&frame,&upper_mid_lower_row,0.1,0,0,1,0,true,false);
+        number_framer(&frame,&blank,0.1,0,0,1,4,false,false);
+        number_framer(&frame,&blank,0.1,0,0,3,0,false,false);
+        number_framer(&frame,&blank,0.1,0,0,3,4,false,true);
     } else if(number == 9) {
-        number_framer(&frame,&upper_mid_lower_row,0.1,0,0,1,0,true,false,1.0);
-        number_framer(&frame,&blank,0.1,0,0,1,4,false,false,1.0);
-        number_framer(&frame,&blank,0.1,0,0,3,4,false,true,1.0);
+        number_framer(&frame,&upper_mid_lower_row,0.1,0,0,1,0,true,false);
+        number_framer(&frame,&blank,0.1,0,0,1,4,false,false);
+        number_framer(&frame,&blank,0.1,0,0,3,4,false,true);
     } else if(number == 0) {
-        number_framer(&frame,&upper_lower_row,0.1,0,0,1,0,true,false,1.0);
-        number_framer(&frame,&blank,0.1,0,0,1,4,false,false,1.0);
-        number_framer(&frame,&blank,0.1,0,0,2,0,false,false,1.0);
-        number_framer(&frame,&blank,0.1,0,0,2,4,false,false,1.0);
-        number_framer(&frame,&blank,0.1,0,0,3,0,false,false,1.0);
-        number_framer(&frame,&blank,0.1,0,0,3,4,false,true,1.0);
+        number_framer(&frame,&upper_lower_row,0.1,0,0,1,0,true,false);
+        number_framer(&frame,&blank,0.1,0,0,1,4,false,false);
+        number_framer(&frame,&blank,0.1,0,0,2,0,false,false);
+        number_framer(&frame,&blank,0.1,0,0,2,4,false,false);
+        number_framer(&frame,&blank,0.1,0,0,3,0,false,false);
+        number_framer(&frame,&blank,0.1,0,0,3,4,false,true);
     } 
 }
 
