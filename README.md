@@ -69,6 +69,14 @@ Ilustra o número atual do contador. A contagem é cíclica entre 0 e 9, ou seja
 
 É possível acompanhar o contador através do monitor do computador via conexão serial
 
+### 5. Interrupções
+
+O programa implementa interrupção nos botões A e B. Dessa forma, não é necessário ler continuamente o estado de cada botão.
+
+### 6. Deboucing
+
+O programa implementa tratamento de boucing (via software). Dessa forma, evita leituras falsas de botões causadas por oscilações elétricas, garantindo que cada pressionamento seja registrado apenas uma vez,
+
 
 
 
