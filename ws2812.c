@@ -1,5 +1,5 @@
 /*
-    Aluno: Lucas Carneirod e Araújo Lima
+    Aluno: Lucas Carneiro de Araújo Lima
 */
 
 #include <stdio.h>
@@ -16,6 +16,11 @@
 #define IS_RGBW false
 #define NUM_PIXELS 25
 #define WS2812_PIN 7
+#define RED 13
+#define GREEN 12
+#define BLUE 11
+#define BTNA 5
+#define BTNB 6
 
 uint8_t led = 0; // Índice do LED a ser controlado (0 a 24)
 uint8_t red = 0;   // Intensidade do vermelho (0 a 255)
@@ -29,6 +34,12 @@ static inline void put_pixel(uint32_t pixel_grb) {
 static inline uint32_t urgb_u32(uint8_t r, uint8_t g, uint8_t b) {
     return ((uint32_t)(r) << 8) | ((uint32_t)(g) << 16) | (uint32_t)(b);
 }
+
+static void gpio_irq_handler(uint gpio, uint32_t events); // Prototipação da função de interrupção
+
+static volatile uint32_t last_time = 0; // Armazena o tempo do último evento (em microssegundos)
+
+unsigned short int counter = 0;
 
 uint32_t led_buffer[NUM_PIXELS] = {0}; // Buffer para armazenar as cores de todos os LEDs
 
@@ -56,36 +67,62 @@ void set_leds_from_color(PIO pio, uint sm, uint32_t cor) {
   }
 }
 
+// Inicializa e configura os LEDs RGB como saída. Inicializa e configura os botões como entradas.
+void setting_inputs_and_outputs() {
+    gpio_init(RED);
+    gpio_set_dir(RED, GPIO_OUT); 
+    gpio_put(RED, false);
+
+    gpio_init(BTNA);
+    gpio_set_dir(BTNA, GPIO_IN);
+    gpio_pull_up(BTNA);  
+
+    gpio_init(BTNB);
+    gpio_set_dir(BTNB, GPIO_IN);
+    gpio_pull_up(BTNB);  
+}
+
 int main() {
     stdio_init_all();
-    printf("WS2812 5x5 Matrix - Single LED Control\n");
+    
+    setting_inputs_and_outputs();
 
     PIO pio = pio0;
     int sm = 0;
     uint offset = pio_add_program(pio, &ws2812_program);
 
-    unsigned short int counter = 0;
     char tecla='\0';
 
     ws2812_program_init(pio, sm, offset, WS2812_PIN, 800000, IS_RGBW);
 
-    set_leds_from_color(pio, pio_claim_unused_sm(pio, true), color(0.0, 0.0, 0.0));
+    //set_leds_from_color(pio, pio_claim_unused_sm(pio, true), color(0.0, 0.0, 0.0));
+
+    numbers(0);
+
+    gpio_set_irq_enabled_with_callback(BTNA, GPIO_IRQ_EDGE_FALL, true, &gpio_irq_handler);
+    gpio_set_irq_enabled_with_callback(BTNB, GPIO_IRQ_EDGE_FALL, true, &gpio_irq_handler);
 
     while(true) {
-        tecla = getchar_timeout_us(50);
-        
-        if(tecla != PICO_ERROR_TIMEOUT) {
-            counter = (tecla == '+') ? (counter + 10 + 1) : (tecla == '-') ? (counter + 10 - 1) : counter;
-
-            printf("Contador atual: %i\n", counter);
-            numbers(counter%10);
-            sleep_ms(1000);
-
-            counter = (counter >= 10) ? counter - 10 : counter;
-        }
-
-        sleep_ms(100); 
+        gpio_put(RED, true);
+        sleep_ms(1000/10);
+        gpio_put(RED, false);
+        sleep_ms(1000/10);
     }
 
     return 0;
+}
+
+// Função de interrupção com debouncing
+void gpio_irq_handler(uint gpio, uint32_t events) {
+    uint32_t current_time = to_us_since_boot(get_absolute_time()); // Obtém o tempo atual em microssegundos
+
+    if (current_time - last_time > 200000) { // 200 ms de debouncing
+        last_time = current_time; 
+
+        counter = (gpio == BTNA) ? (counter + 10 + 1)%10 : (gpio == BTNB) ? (counter + 10 - 1)%10 : counter;
+
+        numbers(counter);
+
+        printf("Contador atual: %i\n", counter);
+    }
 }
