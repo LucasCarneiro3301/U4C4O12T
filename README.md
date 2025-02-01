@@ -8,7 +8,7 @@ Lucas Carneiro de Araújo Lima
 __Descrição:__
 O projeto utiliza a placa BitDogLab com uma matriz 5x5 de LEDs WS2812, um LED RGB e dois botões. O LED vermelho do RGB deve piscar 5 vezes por segundo. O botão A incrementa e o botão B decrementa o número exibido na matriz de LEDs, que deve representar os números de 0 a 9.
 
-__Para esta prática, os seguintes componentes e ferramentas se fazem necessários:__
+__Para este trabalho, os seguintes componentes e ferramentas se fazem necessários:__
 1) Microcontrolador Raspberry Pi Pico W.
 2) Matriz de LEDs Coloridos (LED-RGB 5x5 WS2812).
 3) Ambiente de trabalho VSCode.
@@ -37,7 +37,7 @@ cmake ..
 make
 ```
 
-### 4. Carregue o programa no Raspberry Pi Pico
+### 4. Conexão com a Rapberry Pico
 1. Conecte o Raspberry Pi Pico ao seu computador via USB.
 2. Inicie o modo de gravação pressionando o botão **BOOTSEL** e **RESTART**.
 3. O Pico será montado como um dispositivo de armazenamento USB.
@@ -48,11 +48,31 @@ make
 1. Embora o projeto seja compativel com a extensão Wokwi, a **intensidade** dos LEDs está adaptada para a placa BitDogLab! Logo, a visualização no ambiente de simulação não está perfeitamente adequada.
 2. Manuseie a placa com cuidado.
 
-## Funções dos botões
+## Recursos e Funcionalidades
 
+### 1. Botões
+
+<div align="center">
 | BOTÃO                            | DESCRIÇÃO                                     | 
 |:----------------------------------:|:---------------------------------------------:|
 | A                                  | Incrementa em uma unidade                   | 
 | B                                  | Decrementa em uma unidade               | 
+</div>
+
+### 2. LED RGB Vermelho
+
+Pisca continuamente 5 vezes por segundo
+
+### 3. Matriz de LEDs 5x5
+
+Ilustra o número atual do contador. A contagem é cíclica entre 0 e 9, ou seja, se decrementar 0 o resultado é 9, e se incrementar 9 o resultado é 0.
+
+### 4. Monitor Serial
+
+É possível acompanhar o contador através do monitor do computador via conexão serial
+
+
+
+
 
 
