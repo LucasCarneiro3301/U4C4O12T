@@ -15,7 +15,7 @@ __Para este trabalho, os seguintes componentes e ferramentas se fazem necessári
 4) Ferramenta educacional BitDogLab.
 5) Botões A e B
 
-__O resultado do projeto pode ser assistido através deste link: [Aplicação U4C4O12T - Contador na Matriz de LED](https://www.youtube.com/watch?v=wnTqzAEB6Fc).__
+__O resultado do projeto pode ser assistido através deste link: [Aplicação U4C4O12T - Contador na Matriz de LED](https://youtu.be/AJNJWrppGwU).__
 
 <div align="center">
   <img src="https://github.com/user-attachments/assets/45ee39ff-bf4a-4fbb-897b-3f30eb7b1b9b" alt="GIF demonstrativo" width="300"/>
