@@ -23,10 +23,16 @@ __O resultado do projeto pode ser assistido através deste link: [Aplicação U4
 
 ## Instruções de Uso
 
-### 1. Configure o ambiente de desenvolvimento
+### 1. Clone o repositório
+Abra o terminal e execute o comando abaixo para clonar o repositório em sua máquina:
+```bash
+git clone https://github.com/LucasCarneiro3301/U4C4O12T.git
+```
+
+### 2. Configure o ambiente de desenvolvimento
 Certifique-se de que o [SDK do Raspberry Pi Pico](https://github.com/raspberrypi/pico-sdk) esteja instalado e configurado corretamente no seu sistema.
 
-### 2. Compile o projeto
+### 3. Compile o projeto
 Navegue até o diretório raiz do projeto e execute os comandos abaixo:
 ```bash
 mkdir build
@@ -35,14 +41,14 @@ cmake ..
 make
 ```
 
-### 3. Conexão com a Rapberry Pico
+### 4. Conexão com a Rapberry Pico
 1. Conecte o Raspberry Pi Pico ao seu computador via USB.
 2. Inicie o modo de gravação pressionando o botão **BOOTSEL** e **RESTART**.
 3. O Pico será montado como um dispositivo de armazenamento USB.
 4. Execute através do comando **RUN** a fim de copiar o arquivo `ws2812.uf2` para o Pico.
 5. O Pico reiniciará automaticamente e executará o programa.
 
-### 4. Observações (IMPORTANTE !!!)
+### 5. Observações (IMPORTANTE !!!)
 1. Embora o projeto seja compativel com a extensão Wokwi, a **intensidade** dos LEDs está adaptada para a placa BitDogLab! Logo, a visualização no ambiente de simulação não está perfeitamente adequada.
 2. Manuseie a placa com cuidado.
 
